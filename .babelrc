@@ -12,7 +12,9 @@ with options
 }
 */
 
-// without options
+//without options
 {
-  "plugins": ["transform-remove-console"]
+  // {
+  //   "plugins": ["transform-remove-console"]
+  // }
 }
