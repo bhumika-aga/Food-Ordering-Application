@@ -10,9 +10,8 @@ function filterData(searchText, restaurants) {
 }
 
 const Body = () => {
-  // let searchTxt = "KFC";
   const [restaurants, setRestaurants] = useState(restaurantList);
-  const [searchText, setSearchText] = useState("KFC");
+  const [searchText, setSearchText] = useState("");
 
   return (
     <>
@@ -29,7 +28,9 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
+            //need to filter the data
             const data = filterData(searchText, restaurants);
+            //update the state - restaurants
             setRestaurants(data);
           }}
         >
@@ -37,7 +38,7 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {restaurantList.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
           );
